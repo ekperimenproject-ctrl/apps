@@ -1,0 +1,286 @@
+/* ===== TEMA ===== */
+:root,
+[data-theme="violet"] {
+  --page: linear-gradient(135deg, #1e1b4b, #4c1d95 55%, #7c3aed);
+  --card: #ffffff;
+  --text: #1e1b4b;
+  --muted: #6b7280;
+  --border: #e0e7ff;
+  --input-bg: #ffffff;
+  --btn: linear-gradient(135deg, #7c3aed, #4f46e5);
+  --accent: #7c3aed;
+  --glow: rgba(124, 58, 237, 0.35);
+  --msg-bg: #f5f3ff;
+  --high-bg: #fee2e2;
+  --high: #b91c1c;
+  --low-bg: #fef3c7;
+  --low: #b45309;
+  --win-bg: #d1fae5;
+  --win: #047857;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="ocean"] {
+  --page: linear-gradient(160deg, #ecfeff, #cffafe 50%, #a5f3fc);
+  --card: #ffffff;
+  --text: #0f3d4c;
+  --muted: #5b7f8b;
+  --border: #bae6fd;
+  --input-bg: #ffffff;
+  --btn: linear-gradient(135deg, #06b6d4, #0284c7);
+  --accent: #0891b2;
+  --glow: rgba(6, 182, 212, 0.35);
+  --msg-bg: #f0f9ff;
+  --high-bg: #ffe4e6;
+  --high: #be123c;
+  --low-bg: #fef9c3;
+  --low: #a16207;
+  --win-bg: #ccfbf1;
+  --win: #0f766e;
+  --shadow: 0 16px 40px rgba(8, 145, 178, 0.2);
+}
+
+[data-theme="sunset"] {
+  --page: linear-gradient(135deg, #fff7ed, #fed7aa 45%, #fda4af);
+  --card: #fffdfb;
+  --text: #4a1d2b;
+  --muted: #8a6470;
+  --border: #fed7aa;
+  --input-bg: #ffffff;
+  --btn: linear-gradient(135deg, #f97316, #e11d48);
+  --accent: #f97316;
+  --glow: rgba(249, 115, 22, 0.35);
+  --msg-bg: #fff7ed;
+  --high-bg: #ffe4e6;
+  --high: #be123c;
+  --low-bg: #fef3c7;
+  --low: #b45309;
+  --win-bg: #dcfce7;
+  --win: #15803d;
+  --shadow: 0 16px 40px rgba(225, 29, 72, 0.18);
+}
+
+[data-theme="neon"] {
+  --page: radial-gradient(circle at 50% 0%, #1e293b, #0b1020 70%);
+  --card: #111827;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+  --input-bg: #0b1220;
+  --btn: linear-gradient(135deg, #22d3ee, #a855f7);
+  --accent: #22d3ee;
+  --glow: rgba(34, 211, 238, 0.4);
+  --msg-bg: #1e293b;
+  --high-bg: rgba(248, 113, 113, 0.15);
+  --high: #fca5a5;
+  --low-bg: rgba(251, 191, 36, 0.15);
+  --low: #fcd34d;
+  --win-bg: rgba(52, 211, 153, 0.15);
+  --win: #6ee7b7;
+  --shadow: 0 0 40px rgba(34, 211, 238, 0.18);
+}
+
+[data-theme="forest"] {
+  --page: linear-gradient(160deg, #f0fdf4, #dcfce7 50%, #bbf7d0);
+  --card: #ffffff;
+  --text: #14532d;
+  --muted: #5f8068;
+  --border: #bbf7d0;
+  --input-bg: #ffffff;
+  --btn: linear-gradient(135deg, #22c55e, #15803d);
+  --accent: #16a34a;
+  --glow: rgba(34, 197, 94, 0.35);
+  --msg-bg: #f0fdf4;
+  --high-bg: #fee2e2;
+  --high: #b91c1c;
+  --low-bg: #fef3c7;
+  --low: #b45309;
+  --win-bg: #d1fae5;
+  --win: #047857;
+  --shadow: 0 16px 40px rgba(21, 128, 61, 0.2);
+}
+
+/* ===== LAYOUT ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: var(--page);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: background 0.4s;
+}
+
+/* ===== PEMILIH TEMA ===== */
+.themes {
+  display: flex;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.themes button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.themes button:hover {
+  transform: scale(1.12);
+  background-color: transparent;
+}
+
+.themes button.active {
+  box-shadow: 0 0 0 3px #111827;
+}
+
+.themes [data-t="violet"] { background: linear-gradient(135deg, #7c3aed, #4f46e5); }
+.themes [data-t="ocean"]  { background: linear-gradient(135deg, #06b6d4, #0284c7); }
+.themes [data-t="sunset"] { background: linear-gradient(135deg, #f97316, #e11d48); }
+.themes [data-t="neon"]   { background: linear-gradient(135deg, #22d3ee, #a855f7); }
+.themes [data-t="forest"] { background: linear-gradient(135deg, #22c55e, #15803d); }
+
+/* ===== KARTU GAME ===== */
+.game-container {
+  text-align: center;
+  background-color: var(--card);
+  padding: 36px 32px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  max-width: 420px;
+  width: 100%;
+  transition: background-color 0.4s;
+}
+
+.badge {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  background: var(--btn);
+  box-shadow: 0 8px 20px var(--glow);
+}
+
+h1 {
+  font-size: 1.4em;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.subtitle {
+  margin: 0 0 22px;
+  font-size: 0.95em;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.3em;
+  text-align: center;
+  color: var(--text);
+  background-color: var(--input-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--glow);
+}
+
+input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button {
+  background: var(--btn);
+  color: white;
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  box-shadow: 0 6px 16px var(--glow);
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== PESAN ===== */
+#message {
+  font-size: 1.05em;
+  font-weight: 500;
+  color: var(--muted);
+  background-color: var(--msg-bg);
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin: 20px 0 0;
+  transition: all 0.25s;
+}
+
+#message.high {
+  color: var(--high);
+  background-color: var(--high-bg);
+}
+
+#message.low {
+  color: var(--low);
+  background-color: var(--low-bg);
+}
+
+#message.win {
+  color: var(--win);
+  background-color: var(--win-bg);
+}
+
+#attempts {
+  margin: 10px 0 0;
+  font-size: 0.85em;
+}
+
+#restartButton {
+  margin-top: 14px;
+}

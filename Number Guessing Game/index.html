@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Pilihan tema -->
+    <div class="themes" id="themes">
+      <button data-t="violet" title="Violet" class="active"></button>
+      <button data-t="ocean" title="Ocean"></button>
+      <button data-t="sunset" title="Sunset"></button>
+      <button data-t="neon" title="Neon Dark"></button>
+      <button data-t="forest" title="Forest"></button>
+    </div>
+
+    <div class="game-container">
+      <div class="badge"></div>
+      <h1>Game Tebak Angka</h1>
+      <p class="subtitle">Tebak sebuah angka antara 1 sampai 50!</p>
+
+      <!-- guess input -->
+      <input type="number" name="guessInput" id="guessInput" min="1" max="50" placeholder="" autofocus />
+
+      <button id="guessButton">Submit Angka</button>
+      <p id="message">Semoga Beruntung! Mulai Tebak...</p>
+      <p id="attempts"></p>
+
+      <button id="restartButton" style="display: none">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
